@@ -1,13 +1,13 @@
-package com.work.springbootrabbitmqclient;
+package com.example.consumer.simple;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootRabbitmqClientApplication {
+public class SpringbootRabbitmqConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootRabbitmqClientApplication.class, args);
+        SpringApplication.run(SpringbootRabbitmqConsumerApplication.class, args);
     }
 
 }

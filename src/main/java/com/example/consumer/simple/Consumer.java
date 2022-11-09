@@ -1,6 +1,5 @@
-package com.work.springbootrabbitmqclient;
+package com.example.consumer.simple;
 
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
 import org.springframework.messaging.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "v1")
-public class Client {
+public class Consumer {
 
     private final RabbitMessagingTemplate rabbitMessagingTemplate;
 
-    public Client(final RabbitMessagingTemplate rabbitMessagingTemplate) {
+    public Consumer(final RabbitMessagingTemplate rabbitMessagingTemplate) {
         this.rabbitMessagingTemplate = rabbitMessagingTemplate;
     }
 
