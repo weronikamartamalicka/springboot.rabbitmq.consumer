@@ -1,7 +1,7 @@
-package com.example.consumer.direct.constructor;
+package com.example.consumer.topic.controller;
 
+import com.example.consumer.fanout.model.Message;
 import lombok.extern.slf4j.Slf4j;
-import com.example.consumer.direct.model.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,15 +20,21 @@ public class Consumer {
     }
 
     @RabbitListener(queues = "queue.A")
-    public void receive(Message message) {
+    public void receiveA(Message message) {
         //log.info("Message received" + message);
         System.out.println("Message received: {}" + message);
     }
 
     @RequestMapping (method = RequestMethod.GET, value = "/receive" )
-    public void receive() {
+    public void receiveB() {
         Message message = (Message)rabbitTemplate.receiveAndConvert("queue.B");
         System.out.println("Message received: {}" + message);
         //log.info("Message received" + message);
+    }
+
+    @RabbitListener(queues = "queue.C")
+    public void receiveC(Message message) {
+        //log.info("Message received" + message);
+        System.out.println("Message received: {}" + message);
     }
 }

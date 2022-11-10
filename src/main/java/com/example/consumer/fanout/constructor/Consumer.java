@@ -1,7 +1,7 @@
-package com.example.consumer.direct.constructor;
+package com.example.consumer.fanout.constructor;
 
+import com.example.consumer.fanout.model.Message;
 import lombok.extern.slf4j.Slf4j;
-import com.example.consumer.direct.model.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
